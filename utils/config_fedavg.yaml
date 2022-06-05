@@ -1,0 +1,53 @@
+# device: "cuda" | "cpu"
+device: cuda
+gpu:
+- 0
+
+# federated learning algorithm, federated model, and simulation settings
+fedalg: "fedavg"
+model: "lenet"
+
+compress: "none"
+
+fed_lr: 0.003
+tau: 5
+
+batch_size: 16
+rog_lr: 0.05
+
+T_max: 100
+# T_max: 1000  # signsgd number of update steps
+half: True
+half: False
+sf: 4
+
+train_data_dir: data
+test_data_dir: data
+sample_size:
+- 128
+- 128
+channels: 3
+num_classes: 1000
+
+thres: 2
+dpsnr: -20
+
+#------------------------------------
+# pre-trained model
+joint_postmodel: model_zoos/postmodel.pth
+# optional
+denoiser: model_zoos/denoiser.pth
+usrnet: model_zoos/usrgan.pth
+kernel:  model_zoos/kernels_bicubicx234.mat
+noise_level: 0.01
+
+# tresnet
+refine: False
+# refine: True
+tresnet: model_zoos/tresnet.pth
+
+
+# Log configurations
+output_folder: "experiments"
+printevery: 1
+
