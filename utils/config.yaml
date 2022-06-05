@@ -17,7 +17,6 @@ batch_size: 16
 rog_lr: 0.05
 
 T_max: 100
-# T_max: 1000  # signsgd number of update steps
 half: True
 half: False
 sf: 4
