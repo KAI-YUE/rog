@@ -31,7 +31,7 @@ Federated learning has been proposed as a privacy-preserving machine learning fr
 
 - Run the example with FedAvg:
     ```bash
-    python3 main_fedavg.py
+    python3 attack_fedavg.py
     ```
     The script will load the configuration file `config_fedavg.yaml`. 
 

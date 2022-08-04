@@ -106,4 +106,3 @@ archive/
 # data files
 *.pth
 *.npy
-*.txt
