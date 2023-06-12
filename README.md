@@ -16,6 +16,8 @@ Federated learning has been proposed as a privacy-preserving machine learning fr
 
 - Download the pretrained models and put them under `model_zoos` ([link](https://huggingface.co/erickyue/rog_modelzoo/tree/main))
 
+- Download the csv file (https://storage.googleapis.com/openimages/v6/oidv6-class-descriptions.csv) and put it under `data` folder
+
 - The images for a minimal runnable example has been included under `data` folder. The ImageNet validation dataset can be used for a full test. 
 
 <br />
