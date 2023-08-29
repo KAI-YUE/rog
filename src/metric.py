@@ -7,16 +7,16 @@ import torch
 import torchvision.transforms as T
 
 from utils.utils import tensor2img
-from networks.tresnet import TResnetM
-from networks.tresnet.argparser import parse_args
+#from networks.tresnet import TResnetM
+#from networks.tresnet.argparser import parse_args
 
 class Metrics:
     def __init__(self, config):
-        args = parse_args()
-        self.init_tresnet(config, args)
+        #args = parse_args()
+        #self.init_tresnet(config, args)
 
-        self.top_k = args.top_k
-        self.th = args.th
+        # self.top_k = args.top_k
+        # self.th = args.th
         self.half = config.half
 
         self.device = config.device
@@ -73,10 +73,10 @@ class Metrics:
         if self.half:
             original_img = original_img.to(torch.float32)
 
-        labels_tag = self.semantic_labels(original_img, recon_img)
+        #labels_tag = self.semantic_labels(original_img, recon_img)
         labels = []
-        for i in range(len(labels_tag)):
-            labels.append(labels_tag[i][0])
+        #for i in range(len(labels_tag)):
+        #    labels.append(labels_tag[i][0])
         
         lpips_metric = lpips.LPIPS(net='alex').to(self.device)
 
@@ -84,7 +84,7 @@ class Metrics:
         avg_ssim = 0
         avg_lpips = 0
         avg_jaccard = 0
-        ori_labels_tag, rec_labels_tag = self.semantic_labels(original_img, recon_img)
+        # ori_labels_tag, rec_labels_tag = self.semantic_labels(original_img, recon_img)
         batch_size = original_img.shape[0]
         for i in range(batch_size):
             print("i, {:d}".format(i))
@@ -93,7 +93,8 @@ class Metrics:
             
             psnr_val = psnr(im1, im2)
             ssim_val = ssim(im1, im2)
-            jaccard_val = jaccard(ori_labels_tag[i], rec_labels_tag[i])
+            # jaccard_val = jaccard(ori_labels_tag[i], rec_labels_tag[i])
+            jaccard_val = 0
             
             avg_psnr += psnr_val
             avg_ssim += ssim_val

@@ -4,14 +4,16 @@ gpu:
 - 0
 
 # federated learning algorithm, federated model, and simulation settings
-fedalg: "fedsgd"
-model: "lenet"
+fedalg: "fedavg"
+model: "resnet18"
 
-compress: "qsgd"
-quant_level: 16
+# compress: "qsgd"
+# quant_level: 16
+
+compress: "none"
 
 fed_lr: 0.003
-tau: 5
+tau: 10
 
 batch_size: 16
 rog_lr: 0.05
