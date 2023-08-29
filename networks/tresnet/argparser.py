@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='Class Selective Loss for Partial M
 parser.add_argument('--model_name', type=str, default='tresnet_m')
 parser.add_argument('--input_size', type=int, default=224)
 parser.add_argument('--dataset_type', type=str, default='OpenImages')
-parser.add_argument('--class_description_path', type=str, default='/mnt/ex-ssd/Projects/CV/multi-label/PartialLabelingCSL/data/oidv6-class-descriptions.csv')
+parser.add_argument('--class_description_path', type=str, default='data/oidv6-class-descriptions.csv')
 parser.add_argument('--th', type=float, default=0.8)
 parser.add_argument('--top_k', type=float, default=60)
 
